@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_cl"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="25dp"
+    android:background="@drawable/back_card">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/card_guideline_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/card_type"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_guideline_horizontal_1"
+        app:layout_constraintStart_toStartOf="@+id/card_number"
+        tools:src="@drawable/ic_visa" />
+
+    <TextView
+        android:id="@+id/card_due_date"
+        style="@style/poppinsRegular"
+        app:layout_constraintBottom_toBottomOf="@+id/card_guideline_horizontal_1"
+        app:layout_constraintEnd_toEndOf="@+id/card_number"
+        tools:text="11/25" />
+
+    <TextView
+        android:id="@+id/card_number"
+        style="@style/poppinsRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="7.5dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_guideline_horizontal_1"
+        tools:text="1234 5678 9012 3456" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

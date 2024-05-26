@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/payment_cl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/payment_iv_type"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12.5dp"
+        android:layout_marginBottom="12.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_qr" />
+
+    <TextView
+        android:id="@+id/payment_tv_type"
+        style="@style/poppinsRegular"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/payment_iv_type"
+        app:layout_constraintStart_toEndOf="@+id/payment_iv_type"
+        app:layout_constraintTop_toTopOf="@+id/payment_iv_type"
+        tools:text="QR" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

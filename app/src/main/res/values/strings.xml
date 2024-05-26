@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EldarWallet</string>
+    <string name="debt">Saldo</string>
+    <string name="add_card">Añadir una tarjeta</string>
+</resources>
