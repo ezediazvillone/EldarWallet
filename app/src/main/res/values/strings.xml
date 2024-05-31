@@ -2,4 +2,13 @@
     <string name="app_name">EldarWallet</string>
     <string name="debt">Saldo</string>
     <string name="add_card">Añadir una tarjeta</string>
+    <string name="cards">Tarjetas</string>
+    <string name="payments_methods">Medios de pago</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="name_label">Ingrese su nombre</string>
+    <string name="name_hint">Nombre...</string>
+    <string name="last_name_label">Ingrese su apellido</string>
+    <string name="last_name_hint">Apellido...</string>
+    <string name="continue_label">Continuar</string>
+    <string name="required_field">Campo obligatorio</string>
 </resources>

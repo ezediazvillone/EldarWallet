@@ -25,9 +25,32 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="imageView">
+    <style name="loginEt">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:background">@drawable/back_login</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">25</item>
+        <item name="android:gravity">center|start</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">textPersonName</item>
+    </style>
+
+    <style name="continueTv">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:text">@string/continue_label</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/back_continue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
 </resources>

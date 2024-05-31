@@ -5,8 +5,6 @@ import javax.inject.Inject
 
 class GetPaymentsUseCase @Inject constructor() {
 
-    operator fun invoke(): List<Payment> {
-        return listOf(Payment(id = 1, type = "QR"), Payment(id = 2, type = "NFC"))
-    }
+    operator fun invoke() = listOf(Payment(id = 1, type = "QR"), Payment(id = 2, type = "NFC"))
 
 }

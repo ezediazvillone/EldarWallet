@@ -10,6 +10,7 @@ import com.example.eldarwallet.domain.usecase.GetCardsUseCase
 import com.example.eldarwallet.domain.usecase.GetDebtUseCase
 import com.example.eldarwallet.domain.usecase.GetPaymentsUseCase
 import com.example.eldarwallet.domain.usecase.GetUserUseCase
+import com.example.eldarwallet.domain.usecase.SaveUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -22,7 +23,7 @@ class MainViewModel @Inject constructor(
     private val getPaymentsUseCase: GetPaymentsUseCase
 ) : ViewModel() {
 
-    fun getUser(): User? {
+    fun getUser(): User {
         val user = getUserUseCase()
         Log.d("MainViewModel", "getUser: $user")
         return user

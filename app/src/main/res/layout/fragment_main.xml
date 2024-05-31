@@ -32,21 +32,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.225" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline_horizontal_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.385" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline_horizontal_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.525" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline_horizontal_7"
@@ -106,7 +106,8 @@
 
     <ImageView
         android:id="@+id/main_iv_user"
-        style="@style/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/back_user"
         android:src="@drawable/ic_user"
         app:layout_constraintBottom_toBottomOf="@+id/main_guideline_horizontal_2"
@@ -141,6 +142,13 @@
         app:layout_constraintTop_toBottomOf="@+id/main_tv_debt_label"
         tools:text="$114.90" />
 
+    <TextView
+        android:id="@+id/main_tv_card_label"
+        style="@style/poppinsSemiBold"
+        android:text="@string/cards"
+        app:layout_constraintBottom_toTopOf="@+id/main_guideline_horizontal_4"
+        app:layout_constraintStart_toStartOf="@+id/main_guideline_vertical_1" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_rv_card"
         android:layout_width="0dp"
@@ -168,12 +176,11 @@
         app:layout_constraintStart_toEndOf="@+id/main_iv_add_card"
         app:layout_constraintTop_toTopOf="@+id/main_iv_add_card" />
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-        android:src="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/main_guideline_horizontal_6"
-        app:layout_constraintEnd_toEndOf="@+id/main_guideline_vertical_3"
+    <TextView
+        android:id="@+id/main_tv_payments_label"
+        style="@style/poppinsSemiBold"
+        android:text="@string/payments_methods"
+        app:layout_constraintBottom_toTopOf="@+id/main_guideline_horizontal_6"
         app:layout_constraintStart_toStartOf="@+id/main_guideline_vertical_1" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -187,7 +194,8 @@
 
     <ImageView
         android:id="@+id/main_iv_app"
-        style="@style/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/ic_eldar"
         app:layout_constraintBottom_toTopOf="@+id/main_guideline_horizontal_9"
         app:layout_constraintEnd_toStartOf="@+id/main_guideline_vertical_5"

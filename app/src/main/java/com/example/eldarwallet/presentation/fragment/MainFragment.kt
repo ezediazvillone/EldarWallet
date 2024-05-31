@@ -38,7 +38,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val user = viewModel.getUser()
-        if (user == null) {
+        if (user.name.isEmpty() || user.lastName.isEmpty()) {
             navigateToLoginScreen()
             return
         }
@@ -87,13 +87,6 @@ class MainFragment : Fragment() {
             paymentList = viewModel.getPayments(),
             onPaymentClick = { payment -> onPaymentSelected(payment) }
         )
-        addItemDecoration(
-            DividerItemDecoration(
-                requireContext(),
-                DividerItemDecoration.VERTICAL
-            ).apply {
-                setDrawable(resources.getDrawable(R.color.primary, null))
-            })
     }
 
     private fun onPaymentSelected(payment: Payment) {
