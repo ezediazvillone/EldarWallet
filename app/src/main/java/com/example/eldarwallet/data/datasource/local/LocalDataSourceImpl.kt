@@ -15,4 +15,10 @@ class LocalDataSourceImpl @Inject constructor(
         prefs.lastName = user.lastName
     }
 
+    override fun getDebt() = prefs.debt.toDouble()
+
+    override fun setDebt(debt: Double) {
+        prefs.debt = debt.toString()
+    }
+
 }

@@ -8,4 +8,8 @@ interface Repository {
 
     fun saveUser(user: User)
 
+    fun getDebt(): Double
+
+    fun setDebt(debt: Double)
+
 }

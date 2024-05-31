@@ -1,6 +1,6 @@
 package com.example.eldarwallet.domain.model
 
 data class User(
-    var name: String,
-    var lastName: String
+    val name: String,
+    val lastName: String
 )

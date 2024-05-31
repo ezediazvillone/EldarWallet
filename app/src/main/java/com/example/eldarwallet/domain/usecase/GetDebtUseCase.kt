@@ -1,10 +1,12 @@
 package com.example.eldarwallet.domain.usecase
 
+import com.example.eldarwallet.data.repository.RepositoryImpl
 import javax.inject.Inject
 
-class GetDebtUseCase @Inject constructor() {
+class GetDebtUseCase @Inject constructor(
+    private val repo: RepositoryImpl
+) {
 
-    operator fun invoke() = 114.90 //todo: call repo, repo calls local data source and local data source call prefs
-
+    operator fun invoke() = repo.getDebt()
 
 }

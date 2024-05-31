@@ -15,4 +15,8 @@ class RepositoryImpl @Inject constructor(
 
     override fun saveUser(user: User) = localDataSource.saveUser(userMapper.toEntity(user))
 
+    override fun getDebt() = localDataSource.getDebt()
+
+    override fun setDebt(debt: Double) = localDataSource.setDebt(debt)
+
 }

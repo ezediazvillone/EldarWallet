@@ -8,4 +8,8 @@ interface LocalDataSource {
 
     fun saveUser(user: UserEntity)
 
+    fun getDebt(): Double
+
+    fun setDebt(debt: Double)
+
 }
