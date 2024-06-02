@@ -29,7 +29,11 @@
         android:id="@+id/cardFragment"
         android:name="com.example.eldarwallet.presentation.fragment.CardFragment"
         android:label="fragment_card"
-        tools:layout="@layout/fragment_card" />
+        tools:layout="@layout/fragment_card" >
+        <argument
+            android:name="cardId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/checkoutFragment"
         android:name="com.example.eldarwallet.presentation.fragment.CheckoutFragment"

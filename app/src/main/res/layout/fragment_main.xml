@@ -158,6 +158,17 @@
         app:layout_constraintStart_toStartOf="@+id/main_guideline_vertical_1"
         app:layout_constraintTop_toTopOf="@+id/main_guideline_horizontal_4" />
 
+    <TextView
+        android:id="@+id/main_tv_no_card_registered"
+        style="@style/poppinsRegular"
+        android:visibility="gone"
+        android:textColor="@color/primary"
+        android:text="@string/no_card_registered"
+        app:layout_constraintBottom_toBottomOf="@+id/main_guideline_horizontal_5"
+        app:layout_constraintEnd_toStartOf="@+id/main_guideline_vertical_3"
+        app:layout_constraintStart_toStartOf="@+id/main_guideline_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/main_guideline_horizontal_4" />
+
     <ImageView
         android:id="@+id/main_iv_add_card"
         android:layout_width="27.5dp"

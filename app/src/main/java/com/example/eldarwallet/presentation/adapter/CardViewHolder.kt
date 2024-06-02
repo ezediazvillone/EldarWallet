@@ -24,8 +24,8 @@ class CardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         text = dueDate
     }
 
-    private fun setCardNumber(number: String) = with(binding.cardNumber) {
-        text = number
+    private fun setCardNumber(number: Long) = with(binding.cardNumber) {
+        text = number.toString()
     }
 
     private fun setCardType(type: String) = with(binding.cardType) {

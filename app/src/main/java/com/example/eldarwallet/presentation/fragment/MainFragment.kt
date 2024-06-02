@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.eldarwallet.R
 import com.example.eldarwallet.databinding.FragmentMainBinding
 import com.example.eldarwallet.domain.model.Card
 import com.example.eldarwallet.domain.model.Payment
@@ -44,9 +42,15 @@ class MainFragment : Fragment() {
         }
         setUser(user)
         setDebt(viewModel.getDebtFormatted())
-        initCardRecycler()
         initPaymentsRecycler()
         initListeners()
+        viewModel.getCards()
+        viewModel.cards.observe(viewLifecycleOwner) { cardList ->
+            if (cardList.isNotEmpty())
+                initCardRecycler(cardList)
+            else
+                binding.mainTvNoCardRegistered.visibility = View.VISIBLE
+        }
     }
 
     private fun navigateToLoginScreen() {
@@ -62,22 +66,22 @@ class MainFragment : Fragment() {
         text = debtFormatted
     }
 
-    private fun initCardRecycler() = with(binding.mainRvCard) {
+    private fun initCardRecycler(cardList: List<Card>) = with(binding.mainRvCard) {
         layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         adapter = CardAdapter(
-            cardList = viewModel.getCards(),
+            cardList = cardList,
             onCardClick = { card -> onCardSelected(card) }
         )
+        binding.mainTvNoCardRegistered.visibility = View.GONE
     }
 
     private fun onCardSelected(card: Card) {
         Log.d("MainFragment", "cardSelected: $card")
-        navigateToCardScreen(card)
+        navigateToCardScreen(cardId = card.id)
     }
 
-    private fun navigateToCardScreen(card: Card?) {
-        //todo: send card selected to card screen
-        val action = MainFragmentDirections.actionMainFragmentToCardFragment()
+    private fun navigateToCardScreen(cardId: Int) {
+        val action = MainFragmentDirections.actionMainFragmentToCardFragment(cardId)
         navController.navigate(action)
     }
 
@@ -103,8 +107,8 @@ class MainFragment : Fragment() {
     private fun initListeners() {
         binding.mainIvUser.setOnClickListener { navigateToLoginScreen() }
         binding.mainTvUser.setOnClickListener { navigateToLoginScreen() }
-        binding.mainIvAddCard.setOnClickListener { navigateToCardScreen(card = null) }
-        binding.mainTvAddCard.setOnClickListener { navigateToCardScreen(card = null) }
+        binding.mainIvAddCard.setOnClickListener { navigateToCardScreen(cardId = 0) }
+        binding.mainTvAddCard.setOnClickListener { navigateToCardScreen(cardId = 0) }
     }
 
 }

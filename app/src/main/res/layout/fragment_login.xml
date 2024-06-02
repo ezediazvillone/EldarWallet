@@ -57,8 +57,9 @@
 
     <EditText
         android:id="@+id/login_et_name"
-        style="@style/loginEt"
+        style="@style/editText"
         android:hint="@string/name_hint"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/login_guideline_vertical_2"
         app:layout_constraintStart_toStartOf="@+id/login_guideline_vertical_1"
         app:layout_constraintTop_toTopOf="@+id/login_guideline_horizontal_2" />
@@ -73,15 +74,17 @@
 
     <EditText
         android:id="@+id/login_et_last_name"
-        style="@style/loginEt"
+        style="@style/editText"
         android:hint="@string/last_name_hint"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/login_guideline_vertical_2"
         app:layout_constraintStart_toStartOf="@+id/login_guideline_vertical_1"
         app:layout_constraintTop_toBottomOf="@+id/login_tv_last_name_label" />
 
     <TextView
         android:id="@+id/login_tv_continue"
-        style="@style/continueTv"
+        style="@style/textView"
+        android:text="@string/continue_label"
         app:layout_constraintBottom_toTopOf="@+id/login_guideline_horizontal_3"
         app:layout_constraintEnd_toStartOf="@+id/login_guideline_vertical_2"
         app:layout_constraintStart_toStartOf="@+id/login_guideline_vertical_1" />

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EldarWallet</string>
     <string name="debt">Saldo</string>
-    <string name="add_card">Añadir una tarjeta</string>
+    <string name="add_card">Añadir tarjeta</string>
     <string name="cards">Tarjetas</string>
     <string name="payments_methods">Medios de pago</string>
     <string name="login">Iniciar sesión</string>
@@ -11,4 +11,12 @@
     <string name="last_name_hint">Apellido...</string>
     <string name="continue_label">Continuar</string>
     <string name="required_field">Campo obligatorio</string>
+    <string name="no_card_registered">No hay tarjetas registradas</string>
+    <string name="card_number_label">Ingrese el número de tarjeta</string>
+    <string name="card_number_hint">Número de tarjeta...</string>
+    <string name="card_due_date_label">Ingrese la fecha de vencimiento</string>
+    <string name="card_due_date_hint">Fecha de vencimiento...</string>
+    <string name="card_security_code_label">Ingrese el código de seguridad</string>
+    <string name="card_security_code_hint">Código de seguridad...</string>
+    <string name="create_card">Crear tarjeta</string>
 </resources>
