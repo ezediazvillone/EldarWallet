@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eldarwallet.R
 import com.example.eldarwallet.databinding.ItemCardBinding
 import com.example.eldarwallet.domain.model.Card
+import com.example.eldarwallet.domain.util.CardType.MASTERCARD
+import com.example.eldarwallet.domain.util.CardType.VISA
 
 class CardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -30,8 +32,8 @@ class CardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private fun setCardType(type: String) = with(binding.cardType) {
         val cardTypeImage = when (type) {
-            "Mastercard" -> R.drawable.ic_mastercard
-            "Visa" -> R.drawable.ic_visa
+            MASTERCARD -> R.drawable.ic_mastercard
+            VISA -> R.drawable.ic_visa
             else -> R.drawable.ic_american_express
         }
         setImageResource(cardTypeImage)

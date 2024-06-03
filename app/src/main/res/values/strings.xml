@@ -19,4 +19,11 @@
     <string name="card_security_code_label">Ingrese el código de seguridad</string>
     <string name="card_security_code_hint">Código de seguridad...</string>
     <string name="create_card">Crear tarjeta</string>
+    <string name="card_detail">Detalle de tarjeta</string>
+    <string name="card_number">Número de tarjeta</string>
+    <string name="due_date">Fecha de vencimiento</string>
+    <string name="security_code">Código de seguridad</string>
+    <string name="card_already_registered">Esta tarjeta ya se encuentra registrada en el sistema</string>
+    <string name="registration_failed">No se ha podido registrar la tarjeta en el sistema</string>
+    <string name="checkout_title_label">Pagar con</string>
 </resources>

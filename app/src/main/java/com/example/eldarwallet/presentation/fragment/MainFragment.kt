@@ -77,10 +77,10 @@ class MainFragment : Fragment() {
 
     private fun onCardSelected(card: Card) {
         Log.d("MainFragment", "cardSelected: $card")
-        navigateToCardScreen(cardId = card.id)
+        navigateToCardScreen(card.id)
     }
 
-    private fun navigateToCardScreen(cardId: Int) {
+    private fun navigateToCardScreen(cardId: Int = 0) {
         val action = MainFragmentDirections.actionMainFragmentToCardFragment(cardId)
         navController.navigate(action)
     }
@@ -99,16 +99,15 @@ class MainFragment : Fragment() {
     }
 
     private fun navigateToPaymentScreen(payment: Payment) {
-        //todo: send payment selected to checkout screen
-        val action = MainFragmentDirections.actionMainFragmentToCheckoutFragment()
+        val action = MainFragmentDirections.actionMainFragmentToCheckoutFragment(payment.type)
         navController.navigate(action)
     }
 
     private fun initListeners() {
         binding.mainIvUser.setOnClickListener { navigateToLoginScreen() }
         binding.mainTvUser.setOnClickListener { navigateToLoginScreen() }
-        binding.mainIvAddCard.setOnClickListener { navigateToCardScreen(cardId = 0) }
-        binding.mainTvAddCard.setOnClickListener { navigateToCardScreen(cardId = 0) }
+        binding.mainIvAddCard.setOnClickListener { navigateToCardScreen() }
+        binding.mainTvAddCard.setOnClickListener { navigateToCardScreen() }
     }
 
 }

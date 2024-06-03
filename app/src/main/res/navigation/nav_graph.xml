@@ -38,6 +38,10 @@
         android:id="@+id/checkoutFragment"
         android:name="com.example.eldarwallet.presentation.fragment.CheckoutFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" />
+        tools:layout="@layout/fragment_checkout" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

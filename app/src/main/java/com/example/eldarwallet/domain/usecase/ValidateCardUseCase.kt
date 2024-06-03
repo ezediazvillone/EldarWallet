@@ -2,6 +2,9 @@ package com.example.eldarwallet.domain.usecase
 
 import com.example.eldarwallet.data.repository.RepositoryImpl
 import com.example.eldarwallet.domain.model.Card
+import com.example.eldarwallet.domain.util.CardType.AMERICAN_EXPRESS
+import com.example.eldarwallet.domain.util.CardType.MASTERCARD
+import com.example.eldarwallet.domain.util.CardType.VISA
 import com.example.eldarwallet.domain.util.ValidationCard
 import javax.inject.Inject
 
@@ -19,13 +22,13 @@ class ValidateCardUseCase @Inject constructor(
         val cardSecurityCodeValid: Int
 
         when (card.type) {
-            "MasterCard" -> {
+            MASTERCARD -> {
                 cardNumberValid = 5031755734530604
                 cardDueDateValid = "11/25"
                 cardSecurityCodeValid = 123
             }
 
-            "Visa" -> {
+            VISA -> {
                 cardNumberValid = 4509953566233704
                 cardDueDateValid = "11/25"
                 cardSecurityCodeValid = 123
@@ -44,22 +47,22 @@ class ValidateCardUseCase @Inject constructor(
             ValidationCard.ErrorOnCardDueDate()
         else if (card.securityCode != cardSecurityCodeValid)
             ValidationCard.ErrorOnCardSecurityCode()
-        else if (cardIsAlreadyRegistered(card))
+        else if (cardAlreadyRegistered(card))
             ValidationCard.CardAlreadyRegistered
         else
             ValidationCard.CardValid(card)
     }
 
-    private suspend fun cardIsAlreadyRegistered(card: Card): Boolean {
+    private suspend fun cardAlreadyRegistered(card: Card): Boolean {
         val cardList = repo.getCardList()
         return cardList.any { it.number == card.number && it.dueDate == card.dueDate && it.securityCode == card.securityCode }
     }
 
     private fun getCardType(cardNumber: Long): String {
         return when (cardNumber.toString().take(1)) {
-            "5" -> "MasterCard"
-            "4" -> "Visa"
-            else -> "American Express"
+            "5" -> MASTERCARD
+            "4" -> VISA
+            else -> AMERICAN_EXPRESS
         }
     }
 

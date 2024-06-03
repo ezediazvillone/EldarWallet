@@ -51,7 +51,7 @@ class CardFragment : Fragment() {
                 is ValidationCard.CardValid -> viewModel.insertCard(cardValidation.card)
                 ValidationCard.CardAlreadyRegistered -> Toast.makeText(
                     requireContext(),
-                    "Esta tarjeta ya se encuentra registrada en el sistema",
+                    getString(R.string.card_already_registered),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -62,7 +62,7 @@ class CardFragment : Fragment() {
             else
                 Toast.makeText(
                     requireContext(),
-                    "No se ha podido registrar la tarjeta en el sistema",
+                    getString(R.string.registration_failed),
                     Toast.LENGTH_SHORT
                 ).show()
         }
@@ -70,11 +70,11 @@ class CardFragment : Fragment() {
     }
 
     private fun setCardDetailText() {
-        binding.cardTvTitle.text = "Detalle de tarjeta"
-        binding.cardTvNumberLabel.text = "Número de tarjeta"
-        binding.cardTvDueDateLabel.text = "Fecha de vencimiento"
-        binding.cardTvSecurityCodeLabel.text = "Código de seguridad"
-        binding.cardTvCreate.text = "Continuar"
+        binding.cardTvTitle.text = getString(R.string.card_detail)
+        binding.cardTvNumberLabel.text = getString(R.string.card_number)
+        binding.cardTvDueDateLabel.text = getString(R.string.due_date)
+        binding.cardTvSecurityCodeLabel.text = getString(R.string.security_code)
+        binding.cardTvCreate.text = getString(R.string.continue_label)
     }
 
     private fun setCardDetailInfo(card: Card) {
